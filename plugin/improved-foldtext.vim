@@ -4,12 +4,13 @@ endif
 let g:loaded_improved_foldtext = 1
 
 function! FoldText()
-  let comment_char = split(&commentstring, '%s')[0][0]
+  let comment_str = split(&commentstring, '%s')[0]
+  let comment_str = substitute(comment_str, ' ', '', '')
 
   let level = v:foldlevel
-  let indent = repeat(comment_char, level)
+  let indent = repeat(comment_str, level)
 
-  let regex = '^'.comment_char.'\+\s*\|\s*{{{\d\s*'
+  let regex = '^'.comment_str.'\+\s*\|\s*{{{\d\s*'
   let title = substitute(getline(v:foldstart), regex, '', 'g')
 
   let foldsize = (v:foldend - v:foldstart)
