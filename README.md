@@ -11,4 +11,6 @@ Improvements include:
 
 ## Installation
 
-    Plug 'cjbassi/improved-foldtext.vim'
+```vim
+Plug 'cjbassi/improved-foldtext.vim'
+```
